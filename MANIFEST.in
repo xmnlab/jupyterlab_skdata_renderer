@@ -1,0 +1,2 @@
+graft jupyterlab_skdata_renderer/nbextension
+include jupyterlab_skdata_renderer/labextension/*.tgz

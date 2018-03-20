@@ -1,0 +1,7 @@
+default_context:
+    author_name: "Ivan Ogasawara"
+    author_email: "ivan.ogasawara@gmail.com"
+    mime_type: "application/skdata+json"
+    file_type: "json"
+    mime_short_name: "SKDATA"
+    extension_name: "jupyterlab_skdata_renderer"
