@@ -8,7 +8,7 @@ import '../style/index.css';
 /**
  * The default mime type for the extension.
  */
-const MIME_TYPE = 'application/skdata+json';
+const MIME_TYPE = 'application/vnd.odsl.skdata+json';
 
 
 /**

@@ -26,10 +26,10 @@ class SKDATA(JSON):
 
     def _ipython_display_(self):
         bundle = {
-            'application/skdata+json': self.data,
-            'text/plain': '<jupyterlab_skdata_renderer.SKDATA object>'
+            'application/vnd.odsl.skdata+json': self.data,
+            'text/plain': '<jupyterlab_skdata_renderer object>'
         }
         metadata = {
-            'application/skdata+json': self.metadata
+            'application/vnd.odsl.skdata+json': self.metadata
         }
         display(bundle, metadata=metadata, raw=True) 

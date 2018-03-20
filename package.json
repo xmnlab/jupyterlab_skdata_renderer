@@ -21,13 +21,19 @@
     "watch": "npm-run-all -p watch:*"
   },
   "babel": {
-    "presets": ["latest"],
-    "plugins": ["transform-class-properties"]
+    "presets": [
+      "latest"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
   },
   "jupyterlab": {
     "mimeExtension": "lib/lab_extension"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel": "^6.23.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.18.2",

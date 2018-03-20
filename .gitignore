@@ -13,3 +13,5 @@ jupyterlab_skdata_renderer/static/
 
 # OS X
 .DS_Store
+
+__pycache__
