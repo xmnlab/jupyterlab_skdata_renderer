@@ -8,9 +8,8 @@ const CLASS_NAME = 'output_SKDATA rendered_html';
  */
 function render(props, node) {
   const text = document.createTextNode(JSON.stringify(props.data));
-  const text2 = document.createTextNode('OK')
   node.appendChild(text);
-  mode.appendChiild(text2);
+  console.log('render');
 }
 
 /**
@@ -21,6 +20,7 @@ function handleClearOutput(event, { cell: { output_area } }) {
   const toinsert = output_area.element.find(CLASS_NAME.split(' ')[0]);
   /* e.g. Dispose of resources used by renderer library */
   // if (toinsert) renderLibrary.dispose(toinsert[0]);
+  console.log('handleClearOutput');
 }
 
 /**
@@ -42,6 +42,7 @@ function handleAddOutput(event,  { output, output_area }) {
   //       });
   //   });
   // }
+  console.log('handleAddOutput');
 }
 
 /**
@@ -67,7 +68,9 @@ export function register_renderer(notebook) {
     const props = { data, metadata: metadata[MIME_TYPE] };
     render(props, toinsert[0]);
     element.append(toinsert);
-    element.append('OK2');
+
+    console.log('append_mime');
+
     return toinsert;
   };
 
@@ -104,6 +107,7 @@ export function register_renderer(notebook) {
  * Re-render cells with output data of 'application/vnd.odsl.skdata+json' mime type
  */
 export function render_cells(notebook) {
+  console.log('render_cells');
   /* Get all cells in notebook */
   notebook.get_cells().forEach(cell => {
     /* If a cell has output data of 'application/vnd.odsl.skdata+json' mime type */

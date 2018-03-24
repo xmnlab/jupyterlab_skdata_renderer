@@ -35,7 +35,13 @@ class OutputWidget extends Widget {
    * Render SKDATA into this widget's node.
    */
   renderModel(model) {
-    this.node.textContent = model.data[this._mimeType];
+    const steps = model.data[this._mimeType]['steps'];
+    var text = '';
+
+    for (var i in steps){
+      text += '<li>' + i + ' - ' + steps[i] + '</li>';
+    }
+    this.node.innerHTML= '<ul>' + text + '</ul>';
   }
 }
 

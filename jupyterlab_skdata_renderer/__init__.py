@@ -1,10 +1,14 @@
 from IPython.display import display, JSON
 import json
 
-# Running `npm run build` will create static resources in the static
-# directory of this Python package (and create that directory if necessary).
 
 def _jupyter_nbextension_paths():
+    """
+    # Running `npm run build` will create static resources in the static
+    # directory of this Python package (and create that directory if necessary).
+
+    :return:
+    """
     return [{
         'section': 'notebook',
         'src': 'static',
@@ -12,16 +16,18 @@ def _jupyter_nbextension_paths():
         'require': 'jupyterlab_skdata_renderer/extension'
     }]
 
-# A display class that can be used within a notebook. 
-#   from jupyterlab_skdata_renderer import SKDATA
-#   SKDATA(data)
-    
-class SKDATA(JSON):
-    """A display class for displaying SKDATA visualizations in the Jupyter Notebook and IPython kernel.
+
+class SkDataDisplay(JSON):
+    """A display class for displaying SKDATA visualizations in the Jupyter
+    Notebook and IPython kernel.
     
     SKDATA expects a JSON-able dict, not serialized JSON strings.
 
     Scalar types (None, number, string) are not allowed, only dict containers.
+
+    # A display class that can be used within a notebook.
+    #   from jupyterlab_skdata_renderer import SKDATA
+    #   SKDATA(data)
     """
 
     def _ipython_display_(self):
